@@ -81,13 +81,13 @@ Explore Data / Power BI Visuals
 
 Created a workspace called `Fab_Analytics_Space`, running on a Fabric Trial Capacity so I had access to the full set of Fabric workloads.
 
-`📸 images/workspace-created.png`
+![Workspace created in Microsoft Fabric](images/workspace-created.png)
 
 ### 2. Create the Lakehouse
 
 Created a Lakehouse named `salesdata` and uploaded the sample dataset (`sales.csv`) into its **Files** section.
 
-`📸 images/salesdata-lakehouse.png`
+![salesdata Lakehouse with sales.csv loaded](images/salesdata-lakehouse.png)
 
 ### 3. Load the CSV into a Delta table
 
@@ -98,7 +98,7 @@ Converted the raw CSV into a proper Delta table named `sales`. This isn't just a
 - Native SQL query support
 - Built-in data versioning
 
-`📸 images/sales-table.png`
+![sales Delta table](images/sales-table.png)
 
 ### 4. Go hunting in the OneLake Catalog
 
@@ -115,7 +115,7 @@ Created a second Lakehouse, `analytics`, and pointed a **OneLake Table Shortcut*
 - Way less storage wasted on duplicate data
 - Real-time access — no "wait for the nightly refresh"
 
-`📸 images/onelake-shortcut.png`
+![OneLake shortcut connecting analytics Lakehouse to salesdata](images/onelake-shortcut.png)
 
 ### 6. Query it with the SQL Analytics Endpoint
 
@@ -143,19 +143,19 @@ GROUP BY CustomerName
 ORDER BY TotalRevenue DESC;
 ```
 
-`📸 images/sql-query-results.png`
+![SQL Analytics Endpoint query results](images/sql-query-results.png)
 
 ### 7. Build the Semantic Model
 
 Created a Direct Lake Semantic Model, `Sales Analysis`, sitting directly on top of the `sales` table — no import mode, no scheduled refresh. This is the layer that turns raw tables into something a business user can actually pick up and build a report from.
 
-`📸 images/semantic-model.png`
+![Sales Analysis semantic model](images/semantic-model.png)
 
 ### 8. Explore the data
 
 Used the **Explore Data** experience to drop `Item` in as a dimension and `Quantity` as a measure, then poked around with a couple of quick visuals to see product performance at a glance.
 
-`📸 images/explore-data.png`
+![Explore Data visualization of product quantity](images/explore-data.png)
 
 ---
 
@@ -215,20 +215,15 @@ Nothing fancy, but it's the exact pattern real analytics teams use to avoid copy
 
 ```
 microsoft-fabric-learning-journey/
-├── Lab-01/
-├── Lab-02-Discover-and-Connect-to-Data-in-OneLake/
-│   ├── README.md
-│   └── images/
-│       ├── workspace-created.png
-│       ├── salesdata-lakehouse.png
-│       ├── sales-table.png
-│       ├── onelake-shortcut.png
-│       ├── sql-query-results.png
-│       ├── semantic-model.png
-│       └── explore-data.png
-└── README.md
+├── Lab-02-Discover-and-Connect-to-Data-in-OneLake.md
+└── images/
+    ├── workspace-created.png
+    ├── salesdata-lakehouse.png
+    ├── sales-table.png
+    ├── onelake-shortcut.png
+    ├── sql-query-results.png
+    ├── semantic-model.png
+    └── explore-data.png
 ```
-
-Drop your screenshots into the `images/` folder using the exact filenames referenced above, and every `📸` placeholder in this file will render as a real image once pushed to GitHub.
 
 </details>
